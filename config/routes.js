@@ -30,9 +30,7 @@ module.exports = function (app, passport) {
   //   login page.  Otherwise, the primary route function function will be called,
   //   which, in this example, will redirect the user to the home page.
   app.get('/auth/yammer/callback', 
-    
     passport.authenticate('yammer', { failureRedirect: '/login' }),
-
     function(req, res) {
       res.redirect('/');
     });

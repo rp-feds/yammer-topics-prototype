@@ -5,6 +5,11 @@ var YammerStrategy = require('passport-yammer').Strategy;
 var YAMMER_CONSUMER_KEY = "AduLptedWhgbgwdGBjhnjw";
 var YAMMER_CONSUMER_SECRET = "kCKbpexJtSoBrCwEIVIZbAfxQd6HxxqCLmXSO3kK2k";
 
+if ('production' == process.env.NODE_ENV) {
+    YAMMER_CONSUMER_KEY = "lPUaNYIEizS96zCNyoYA";
+    YAMMER_CONSUMER_SECRET = "XdSaa0QJoalMhBND8ArVQyehhtq05my308ciQ9KeWk";
+}
+
 // expose this function to our app using module.exports
 module.exports = function (passport, port) {
 
