@@ -1,0 +1,33 @@
+﻿body {
+    background-color: @white;
+    font-weight: @font-weight-normal;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/*
+ =================================
+  BOOTSTRAP OVERRIDES
+ =================================
+*/
+
+.container-fluid {
+  max-width: @container-large-desktop; /* or 970px */
+  position: relative;
+}
+
+/*
+ =================================
+  GENERIC CLASSES
+ =================================
+*/
+
+.gradient-bg-full {
+	.gradient(@start: @white, @stop: @very-light-grey);
+}
+
+.gradient-bg-sm {
+	.gradient(@start: @white, @stop: @very-light-grey, @startpos: 80%);
+}

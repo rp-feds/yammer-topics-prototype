@@ -1,0 +1,114 @@
+﻿/*
+ =================================
+  LETTERSPACE
+ ---------------------------------
+  @usage: .letterspace(100)
+  @description: Mixin to match letterspacing used by Photoshop.
+ =================================
+*/
+
+.letterspace (@number) {
+	letter-spacing: 0em + (@number / 1000)
+}
+
+
+/*
+ =================================
+  PLACEHOLDER
+ ---------------------------------
+  @usage: .placeholder(@color: #000, @line-height: 1.4)
+  @description: Mixin to style input placeholder text.
+ =================================
+*/
+
+.placeholder(@color: #666666; @font-size: @font-size-base; @font-style: normal; @font-weight: @font-weight-normal; @letter-spacing: 0; @line-height: @line-height-base; @padding: 0; @text-align: left; @text-decoration: none; @text-transform: none;) {
+
+	&::-webkit-input-placeholder {
+		color: @color; 
+		font-size: @font-size; 
+		font-style: @font-style; 
+		font-weight: @font-weight; 
+		letter-spacing: @letter-spacing; 
+		line-height: @line-height; 
+		padding: @padding; 
+		text-align: @text-align; 
+		text-decoration: @text-decoration;
+		text-transform: @text-transform;
+	}
+
+	&:-moz-placeholder {
+		color: @color; 
+		font-size: @font-size; 
+		font-style: @font-style; 
+		font-weight: @font-weight; 
+		letter-spacing: @letter-spacing; 
+		line-height: @line-height; 
+		padding: @padding; 
+		text-align: @text-align; 
+		text-decoration: @text-decoration;
+		text-transform: @text-transform;
+	}
+
+	&::-moz-placeholder {
+		color: @color; 
+		font-size: @font-size; 
+		font-style: @font-style; 
+		font-weight: @font-weight; 
+		letter-spacing: @letter-spacing; 
+		line-height: @line-height; 
+		padding: @padding; 
+		text-align: @text-align; 
+		text-decoration: @text-decoration;
+		text-transform: @text-transform;
+	}
+
+	&:-ms-input-placeholder {
+		color: @color; 
+		font-size: @font-size; 
+		font-style: @font-style; 
+		font-weight: @font-weight; 
+		letter-spacing: @letter-spacing; 
+		line-height: @line-height; 
+		padding: @padding; 
+		text-align: @text-align; 
+		text-decoration: @text-decoration;
+		text-transform: @text-transform;
+	}
+}
+
+
+/*
+ =================================
+  GRADIENT
+ ---------------------------------
+  @usage: .graident(@color: @black, @start: @black, @stop: @woodsmoke)
+  @description: Mixin to add background gradient.
+ =================================
+*/
+.gradient(@start: @black, @stop: @woodsmoke, @startpos: 0%, @stoppos: 100%) {
+	background: @start; /* old browsers */
+	background: -webkit-linear-gradient(top, @start @startpos, @stop @stoppos); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, @start @startpos, @stop @stoppos); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/*
+ =================================
+  VERTICAL ALIGN
+ ---------------------------------
+  @usage: .vertical-align()
+  @description: Mixin to vertically align .
+ =================================
+*/
+.vertical-align() {
+	@media(min-width: @grid-float-breakpoint) {
+		display: flex;
+		align-items: row;
+
+		> [class^="col-"], > [class*=" col-"] {		
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

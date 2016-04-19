@@ -1,0 +1,13 @@
+footer {
+	color: @dark-gray;
+	padding-top: 38px;
+	padding-bottom: 20px;
+	padding-left: percentage(80px / @comp-width);
+	padding-right: percentage(80px / @comp-width);
+	.gradient(@start: @bunker, @stop: @cinder, @startpos: 80%, @stoppos: 90%);
+
+	@media (min-width: @grid-float-breakpoint) {
+		padding-left: percentage(80px / @comp-width);
+		padding-right: percentage(80px / @comp-width);
+	}
+}

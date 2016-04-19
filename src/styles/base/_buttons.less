@@ -1,0 +1,102 @@
+﻿.btn {
+    text-transform: uppercase;
+    transition-property: background-color, color;
+    transition-duration: @default-hover-animspeed;
+    transition-timing-function: @default-hover-animease;
+    .letterspace(75);
+
+    &:hover {
+        background-color: @navy-blue;
+        color: @white;
+    }
+}
+
+.btn-default {
+	background-color: transparent;
+	font-size: 14px;
+	color: @aluminium;
+	border-width: 2px;
+	border-color: @very-light-grey;
+	padding: 14px 16px;
+
+	&:hover {
+		color: @black;
+        background-color: @very-light-grey;
+    }
+}
+
+.btn-primary {
+	background-color: transparent;
+	font-size: 14px;
+	border-width: 2px;
+	padding: 14px 16px;
+
+	&:hover {
+		color: @white;
+        background-color: @navy-blue;
+    }	
+}
+
+.btn-secondary {
+	background-color: @navy-blue;
+	color: @white;
+	padding: @padding-base-vertical @padding-base-horizontal;
+}
+
+.btn-link {
+	border-bottom: 2px solid transparent;
+	font-weight: @font-weight-bold;
+	position: relative;
+	padding-left: 0;
+	padding-right: (@padding-small-horizontal + 4px);
+	text-decoration: none;
+	transition-property: border-bottom;
+
+	&:after {
+		left: calc(100% - 4px);
+		top: 50%;
+		border: solid transparent;
+		content: '';
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(red(@navy-blue), green(@navy-blue), blue(@navy-blue), 0);
+		border-left-color: @navy-blue;
+		border-width: 4px;
+		margin-top: -4px;
+	}
+
+	&:hover {
+		background-color: transparent;
+		border-bottom-color: @navy-blue;
+		color: inherit;
+	}
+
+	&.btn-yellow {
+		color: @yellow;
+
+		&:after {
+			border-left-color: @yellow;
+		}
+
+		&:hover {
+			border-bottom-color: @yellow;
+		}
+	}
+
+	&.btn-xs {
+		font-size: 12px;
+		padding-right: (@padding-xs-horizontal + 4px);
+	}
+}
+
+.btn-inverse {
+	background-color: @white;
+	color: @black;
+
+	&:hover {
+		color: @aluminium;
+		background-color: @very-light-grey;		
+	}
+}

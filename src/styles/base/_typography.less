@@ -1,0 +1,42 @@
+/* HEADINGS */
+.h1 {
+    line-height: unit(76px / @font-size-h1);
+    color: @night-rider;
+}
+
+.h2 {
+
+}
+
+.h3 {
+
+}
+
+.h4 {
+    text-transform: uppercase;
+    font-weight: @font-weight-bold;
+    line-height: unit(24px / @font-size-h4);
+    .letterspace(50);
+}
+
+
+/* BLOCKQUOTE */
+blockquote {
+    color: @navy-blue;
+    font-weight: @font-weight-extrabold;
+    line-height: unit(42px / @blockquote-font-size);
+    padding-left: 0;
+    border-left: none;
+
+    q {
+        quotes: "\201C" "\201D" "\2018" "\2019";
+    
+        &:before {
+            content: open-quote;
+        }
+
+        &:after {
+            content: close-quote;
+        }
+    }
+}
