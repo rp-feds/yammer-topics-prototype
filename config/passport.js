@@ -4,10 +4,12 @@
 var YammerStrategy = require('passport-yammer').Strategy;
 var YAMMER_CONSUMER_KEY = "AduLptedWhgbgwdGBjhnjw";
 var YAMMER_CONSUMER_SECRET = "kCKbpexJtSoBrCwEIVIZbAfxQd6HxxqCLmXSO3kK2k";
+var YAMMER_DEVELOPER_TOKEN = "62052-pMzXpm8w2kRS1XDu8nlPsQ";
 
 if ('production' == process.env.NODE_ENV) {
     YAMMER_CONSUMER_KEY = "lPUaNYIEizS96zCNyoYA";
     YAMMER_CONSUMER_SECRET = "XdSaa0QJoalMhBND8ArVQyehhtq05my308ciQ9KeWk";
+    YAMMER_DEVELOPER_TOKEN = "62052-Pw1aKVCkLoBlIagGPLnXZg";
 }
 
 // expose this function to our app using module.exports
@@ -36,7 +38,8 @@ module.exports = function (passport, port) {
         .use(new YammerStrategy({
             clientID: YAMMER_CONSUMER_KEY,
             clientSecret: YAMMER_CONSUMER_SECRET,
-            callbackURL: "http://localhost:" + port + "/auth/yammer/callback"
+            callbackURL: "/auth/yammer/callback",
+            proxy: true
         },
         function(accessToken, refreshToken, profile, done) {
             // asynchronous verification, for effect...

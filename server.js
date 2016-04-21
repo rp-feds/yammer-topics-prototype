@@ -34,7 +34,7 @@ app.set('view engine', 'handlebars');
 // Initialize Passport!  Also use passport.session() middleware, to support
 // persistent login sessions (recommended).
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'pianocatisafraud' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
