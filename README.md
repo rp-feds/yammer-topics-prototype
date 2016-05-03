@@ -1,2 +1,2 @@
-# yammer-topics-prototype
+# Yammer Topics Prototype
 A prototype to display different yammer topics

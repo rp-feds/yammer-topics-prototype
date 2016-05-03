@@ -6,8 +6,8 @@ var exphbs  = require('express-handlebars');
 var passport = require('passport');
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var session      = require('express-session');
+var bodyParser = require('body-parser');
+var session = require('express-session');
 
 // app config
 var app = express();
@@ -29,7 +29,6 @@ app.use(bodyParser()); // get information from html forms
 app.engine('handlebars', hbs.engine);
 app.set('views', __dirname + '/src/views');
 app.set('view engine', 'handlebars');
-// app.use(express.session({ secret: 'keyboard cat' }));
 
 // Initialize Passport!  Also use passport.session() middleware, to support
 // persistent login sessions (recommended).
@@ -38,6 +37,7 @@ app.use(session({ secret: 'pianocatisafraud' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(express.static(__dirname + '/src')); // use /src as static directory
 
 // routes ======================================================================
 require('./config/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
